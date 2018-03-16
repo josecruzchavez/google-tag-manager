@@ -16,9 +16,13 @@
     -->
     <default>
         <!-- Container Script -->
-        <reference name="after_body_start">
+         <reference name="head">
             <block type="bitloop_googletagmanager/dataLayer" name="bitloop_googletagmanager.data_layer" template="bitloop/googletagmanager/data_layer.phtml"/>
             <block type="bitloop_googletagmanager/script" name="bitloop_googletagmanager.script" template="bitloop/googletagmanager/script.phtml"/>
+        </reference>
+
+        <reference name="after_body_start">
+               <block type="bitloop_googletagmanager/bodyDataLayer" name="bitloop_googletagmanager.body_data_layer" template="bitloop/googletagmanager/body_data_layer.phtml"/>
         </reference>
 
     </default>
@@ -30,6 +34,9 @@
         <reference name="bitloop_googletagmanager.data_layer">
             <block type="bitloop_googletagmanager/dataLayer_category" name="bitloop_googletagmanager.data_layer.category" as="bl_gtm_dl_category"/>
         </reference>
+        <reference name="bitloop_googletagmanager.body_data_layer">
+            <block type="bitloop_googletagmanager/dataLayer_category" name="bitloop_googletagmanager.data_layer.category" as="bl_gtm_dl_category"/>
+        </reference>
     </catalog_category_default>
 
     <!--
@@ -37,6 +44,9 @@
     -->
     <catalog_category_layered>
         <reference name="bitloop_googletagmanager.data_layer">
+            <block type="bitloop_googletagmanager/dataLayer_category" name="bitloop_googletagmanager.data_layer.category" as="bl_gtm_dl_category"/>
+        </reference>
+        <reference name="bitloop_googletagmanager.body_data_layer">
             <block type="bitloop_googletagmanager/dataLayer_category" name="bitloop_googletagmanager.data_layer.category" as="bl_gtm_dl_category"/>
         </reference>
     </catalog_category_layered>
@@ -48,6 +58,9 @@
         <reference name="bitloop_googletagmanager.data_layer">
             <block type="bitloop_googletagmanager/dataLayer_product" name="bitloop_googletagmanager.data_layer.product" as="bl_gtm_dl_product"/>
         </reference>
+        <reference name="bitloop_googletagmanager.body_data_layer">
+            <block type="bitloop_googletagmanager/dataLayer_product" name="bitloop_googletagmanager.data_layer.product" as="bl_gtm_dl_product"/>
+        </reference>
     </catalog_product_view>
 
     <!--
@@ -57,6 +70,9 @@
         <reference name="bitloop_googletagmanager.data_layer">
             <block type="bitloop_googletagmanager/dataLayer_orderSuccess" name="bitloop_googletagmanager.data_layer.order_success" as="bl_gtm_dl_order_success"/>
         </reference>
+        <reference name="bitloop_googletagmanager.body_data_layer">
+            <block type="bitloop_googletagmanager/dataLayer_orderSuccess" name="bitloop_googletagmanager.data_layer.order_success" as="bl_gtm_dl_order_success"/>
+        </reference>
     </checkout_multishipping_success>
 
     <!--
@@ -64,6 +80,9 @@
     -->
     <checkout_onepage_success>
         <reference name="bitloop_googletagmanager.data_layer">
+            <block type="bitloop_googletagmanager/dataLayer_orderSuccess" name="bitloop_googletagmanager.data_layer.order_success" as="bl_gtm_dl_order_success"/>
+        </reference>
+        <reference name="bitloop_googletagmanager.body_data_layer">
             <block type="bitloop_googletagmanager/dataLayer_orderSuccess" name="bitloop_googletagmanager.data_layer.order_success" as="bl_gtm_dl_order_success"/>
         </reference>
     </checkout_onepage_success>
